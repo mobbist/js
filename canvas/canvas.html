@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta id="viewport" name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<title>node test</title>
+<style>* { margin: 0px; padding: 0px;}</style>
+<script type="text/javascript">
+window.onload = function(){
+    var oC = document.getElementById("c1");
+    //获取绘图的空间, 目前只支持2d空间
+    var oGC = oC.getContext("2d");
+
+    //设置绘图: 要先设置, 才能绘制
+    //fillStyle : 填充颜色 ,
+    //lineWidth:  线宽度, 属性值
+    //strokeRect: 变形颜色
+    oGC.strokeStyle = "red";
+    //oGC.fillStyle = "red";
+    //绘制方块
+    //fillRect: 绘制一个实心矩形, left top  width height  
+    //oGC.fillRect(50,50,100,100);
+    //fillRect: 绘制一个带边框矩形, left top  width height  
+
+    oGC.fillStyle = "#ccc";
+    oGC.lineWidth = "10";
+    //设置斜角: 在设置之前需要设置lineWidth
+    oGC.lineJoin = "bevel";
+    //设置圆角:在设置之前需要设置lineWidth
+    oGC.lineJoin = "round";
+    oGC.fillRect(150,150,100,100);
+    oGC.strokeRect(50.5,50.5,100,100); //注意:这个边框是2个PX的, 所以需要从半像素的位置开始绘
+
+    oGC.fillStyle = "#f70";
+    oGC.fillRect(200,0,100,100);
+
+
+    //绘制直线: 绘制路径
+    //开始绘制
+    oGC.beginPath();
+    //移动到: 相当于在该坐标点了一点
+    oGC.moveTo(200,200);
+    //相当于另一点也点了一点
+    oGC.lineTo(200,300);
+    oGC.stroke();
+}
+
+</script>
+</head>
+<body>
+<!-- 默认:宽300 高150, 设置canvas不能再css中设置, 需要像设置图片一样 -->
+<canvas id="c1" width="400" height="400">
+    <span>你的浏览器不支持canvas</span>
+</canvas>
+</body>
+</html>

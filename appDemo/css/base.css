@@ -1,0 +1,83 @@
+/*base*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, a, code, em, img, q, small, strong, dd, dl, dt, li, ol, ul, fieldset, form, label, table, tbody, tr, th, td, input,menu { margin:0px; padding:0px;}
+body, button, input, select, textarea {font: 12px/1.5 tahoma,arial,"Hiragino Sans GB",宋体,sans-serif;}
+ol, ul,li{ list-style: none outside none; }
+h1, h2, h3, h4, h5, h6 {font-size: 100%; font-weight:normal;}
+body {color: #3C3C3C; overflow-x: hidden;}
+img{vertical-align:top;}  /*去除图片下面多出4px*/
+/*loading*/
+#loadBackground{ position: absolute; top:0px; left: 0px right:0px; bottom:0px; width: 100%; height: 100%; z-index:10000;}
+#load{ width: 120px; height: 140px; background:url("../images/loading/loading3.png") no-repeat; left:calc(50% - 60px); top:calc(50% - 70px); position: absolute;-moz-animation:translate 0.6s infinite alternate linear;}
+#load div{width: 120px; height: 100px; position: absolute;  }
+#pic{ background:url("../images/loading/loading4.png") no-repeat; -moz-animation:rotate 0.8s infinite linear;  }
+#pic2{background:url("../images/loading/loading5.png") no-repeat; -moz-animation:rotate2 0.8s infinite linear; }
+#shadow{width: 120px; height: 40px;background:-moz-radial-gradient(contain,rgba(0,0,0,0.5),rgba(0,0,0,0));left:calc(50% - 60px); top:calc(50% + 30px);position: absolute; -moz-animation:shadow 0.6s infinite alternate linear;  transform:scale(0.6);   }
+#loadingNum{ font-size: 18px; text-align: center; line-height: 100px; color: #f39; }
+
+/* header */
+.header{ width:100%; overflow: hidden; position: fixed; top:0px; z-index: 1000; background-color: #fff; height: 48px; background:url("../images/index/top_bg.png") repeat-x; color: #fff;}
+.header h1{ position: absolute; left:calc(50% - 2em); font-size: 20px; line-height: 48px;  }
+
+/*menu*/
+menu{height: 45px; position: fixed;  top:48px;  z-index:1000;   font-size:16px; line-height: 45px;  width:100%;  overflow:hidden; background:url("../images/index/menu_body.jpg") repeat-x; background-size: 17px 45px;}
+menu li{ float:left; margin-left: 16px;  position: relative; cursor: pointer;  }
+#selectStyle{  width:50px; height: 30px; z-index:1008; border-radius:3px;border: 1px solid #ccc;  position: fixed; top:55px; left:-10px; }
+menu li {}
+menu li h1{ }
+
+
+article{ min-width: 320px; position:relative;width: 100%;}
+/*bannerBox*/
+#index{display: none; position: relative; width: 100%; min-height: 850px;  }
+#bodyParent{  position:relative; top:92px;  }
+#index_banner li img{ width:100%; }
+#index_banner{ opacity:0; z-index: 100;  position: relative; top:-200px; display: block; }
+#index_banner.bannerHover{ opacity:1;  top:0px;}
+
+/*listBox*/
+#listBox{ width:100%;position: relative; top:200px; opacity: 0;}
+#listBox li{ width:96%; overflow: hidden;  padding:2%; background-color: #EBECED; height: 100%; border-bottom: 1px solid #ccc;}
+#listBox li div:nth-of-type(1){ float: left; width:100px; }
+#listBox li div:nth-of-type(2){ float: right; text-align:left; width: 65%;    }
+#listBox li h3{ width:100%; font-size:15px; min-width: 181px; padding-left:5px; }
+#listBox li img { width: 100%; }
+#listBox.hover{ top:0px;opacity: 1;}
+.dec{ color:#999; padding-left:5px;}
+
+/*leftBox*/
+#shanghai{ display: none; position: relative; width: 100%;  overflow: hidden; min-height: 850px;  }
+.shanghai_listBox{  border-right:1px solid #ccc;border-left:1px solid #ccc;}
+.shanghai_listBox li{ overflow: hidden; margin-top: 8px; }
+.shanghai_listBox li span{ float: left; padding-left:10px; padding-top: 14px;  }
+.shanghai_listBox li img{ float: left; padding-left:5px; width:50px;}
+.shanghai_listBox li div{ float: left; padding-left:5px; padding-top: 5px;   }
+#leftList{ position:relative; float:left; width: 50%; left:-50%; opacity: 0; z-index: 100;background-color: #fff;}
+#rightList{ position:relative; float:left;width: 50%; left:50%;opacity: 0; z-index:100;background-color: #fff;}
+#leftList.hover,#rightList.hover{ left:0px; opacity: 1;  }
+.index_bg{position: absolute;  top:0px; right: 0px; left:0px; bottom: 0px;   font-size:50px; color: #ccc; text-align: center; }
+.index_bg_sub{position: absolute;  top:20%; left: calc(50% - 146px);  }
+.totop{ -webkit-animation:0.5s totop;  }
+@-moz-keyframes rotate{
+	form{ transform:rotate(0deg) }
+	to{ transform:rotate(-360deg)}
+}
+
+@-moz-keyframes rotate2{
+	form{ transform:rotate(0deg) }
+	to{ transform:rotate(360deg)}
+}
+
+@-moz-keyframes translate{
+	form{ transform:translateY(0px) }
+	to{ transform:translateY(7px)}
+}
+@-moz-keyframes shadow{
+	form{ transform:scale(0.6); }
+	to{ transform:scale(0.8);}
+}
+
+
+
+@-webkit-keyframes  totop{
+	100% { top:0px;}
+}

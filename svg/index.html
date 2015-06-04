@@ -1,0 +1,48 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title></title>
+
+<style>
+.mb15 { margin-bottom: 15px;}
+</style>
+</head>
+<body>
+     <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+        <!-- circle   正圆   cx   圆专用的属性: x轴圆心坐标     cy Y轴圆形坐标    r  直径
+             rect     矩形   fill   内填充    rx,ry  圆角弧度
+             line     线段   x1y1  起点XY坐标      X2Y2   终点XY坐标   stroke 边线(全局实现) 
+        -->
+        <circle cx="200" cy="100" r="40" fill="red" style="stroke:black; stroke-width:5;stroke-opacity:0.5"   stroke-opacity="0.5"></circle>
+        <rect width="100" height="100" x="300" y="0" fill="#f70" rx="5" ry="5"></rect>
+        <line x1="0" y1="0"  x2="50" y2="50" stroke="black" stroke-width="5" ></line>
+        <!-- 
+            path 路径 :  用来绘制多边形, 圆形 矩形等都是用path绘制出来的, 他是所有图形层的底层 
+            d属性: 接受10个相关的命令, 以一个字母开头
+                M:  起始坐标点的命令 (可以用空格和逗号来设置坐标的XY坐标)
+                L:  后续坐标点的命令
+                Z:  首尾进行闭合, 表示图形结束
+                H:  具体坐标的水平绘制   小写(h)相对之前这个点坐标的水平长度
+                V:  具体坐标的垂直绘制   小写(v)相对之前这个点坐标的垂直长度     
+                A:  绘制弧形曲线
+                C,S,Q,T  贝塞尔曲线, 暂时不学,较难     
+         -->
+         <path d="M0 250 L100 250 L150 150 L200 250 L300 250 L225 350 L250 450 L150 350 L100 450Z" stroke="black" ></path>
+
+        <!-- d属性下的A命令: 弧形 
+                X半径   Y半径   角度   弧长(0小弧 1大弧)方向(0逆时针 1顺时针) 终点X坐标 终点Y坐标
+    d="M400 250 A100   100     0        0                  1            500     350Z  "
+                当X半径和Y半径不一样就是椭圆, 一样就是正圆
+                椭圆还有角度的设置, 正圆无论任何角度都是一样的      
+        -->
+        <path d="M400 250A100 100 0 1 1 500 350Z" stroke="black" fill="none"></path>
+
+        <!-- 开发一个扇形结构图   设置死的4个点 -->
+        <path d="M400 400A100 100 0 0 1 500 400 L475 425A50 50 0 0 0 425 425Z"  stroke="#ccc" fill="#790" style="box-shadow:1px 1px 1px"></path>
+      </svg>
+      <div id="svgDiv"></div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+</html>
